@@ -1,0 +1,21 @@
+<h2>Child Component</h2>
+{{message}}
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td><button (click)="onButtonClick($event)">Click me!</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
