@@ -3,3 +3,6 @@
 
 
 <app-comp2 [data]=myData (buttonClick)="onButtonClick($event)"></app-comp2>
+<app-child1 (opMessageEvent)="recievedMsg($event)" ></app-child1>
+
+<p>message from child {{messagee}}</p>
