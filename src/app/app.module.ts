@@ -8,6 +8,7 @@ import { Comp2Component } from './comp2/comp2.component';
 import { Child1Component } from './child1/child1.component';
 import { LearningObsComponent } from './learning-obs/learning-obs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,TodoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
