@@ -9,6 +9,8 @@ import { Child1Component } from './child1/child1.component';
 import { LearningObsComponent } from './learning-obs/learning-obs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TodoModule } from './todo/todo.module';
+import { BasicRXJSComponent } from './basic-rxjs/basic-rxjs.component';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,17 @@ import { TodoModule } from './todo/todo.module';
     Comp1Component,
     Comp2Component,
     Child1Component,
-    LearningObsComponent
+    LearningObsComponent,
+    BasicRXJSComponent,
   ],
   imports: [
-    BrowserModule,HttpClientModule,
-    AppRoutingModule,TodoModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    TodoModule,
+    UiModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
