@@ -18,6 +18,14 @@ export class BasicRXJSComponent {
   });
 
   numArray = [1, 2, 3, 4, 5, 6, 9];
+
+  userList = [
+    { id: 1, name: 'John Doe', age: 25, country: 'USA' },
+    { id: 2, name: 'Jane Smith', age: 30, country: 'Canada' },
+    { id: 3, name: 'Mike Johnson', age: 35, country: 'Australia' },
+    { id: 4, name: 'Emily Brown', age: 28, country: 'UK' },
+    { id: 5, name: 'David Lee', age: 32, country: 'Germany' },
+  ];
   // pipe operator combine multiple rxjs fn together (map and filter)
 
   //map() operator in RxJS transforms each emitted value of an observable into a new value
@@ -39,6 +47,9 @@ export class BasicRXJSComponent {
     tap((x: any) => console.log(x))
   );
 
+  // new observable that works on array of elements to return users age <=30
+  observable5$ = from(this.userList).pipe(filter((val) => val.age < 30));
+
   constructor() {
     this.observable$.subscribe((data: any) => {
       console.log(data);
@@ -57,5 +68,7 @@ export class BasicRXJSComponent {
     this.observable2$.subscribe((value) => console.log(value));
     this.observable3$.subscribe((value) => console.log(value));
     this.observable4$.subscribe((value) => console.log(value));
+
+    this.observable5$.subscribe((value) => console.log(value));
   }
 }
