@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodoModule } from './todo/todo.module';
 import { BasicRXJSComponent } from './basic-rxjs/basic-rxjs.component';
 import { UiModule } from './ui/ui.module';
+import { CounterComponent } from './counter/counter/counter.component';
+import { CounterOutputComponent } from './counter/counter-output/counter-output.component';
+import { CounterButtonsComponent } from './counter/counter-buttons/counter-buttons.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { UiModule } from './ui/ui.module';
     Child1Component,
     LearningObsComponent,
     BasicRXJSComponent,
+    CounterComponent,
+    CounterOutputComponent,
+    CounterButtonsComponent,
   ],
   imports: [
     BrowserModule,

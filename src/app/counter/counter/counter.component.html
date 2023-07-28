@@ -1,0 +1,11 @@
+<p-card header="Output" [style]="{ 'background-color': '#E0F2F1' }">
+  <app-counter-output [counter]="counter"></app-counter-output>
+</p-card>
+
+<p-card header="Button" [style]="{ 'background-color': '#FFCDD2' }">
+  <app-counter-buttons
+    (increment)="onIncrement()"
+    (decrement)="onDecrement()"
+    (reset)="onReset()"
+  ></app-counter-buttons>
+</p-card>
