@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { decrement, increment, reset } from '../state/counter.actions';
+import { counterDTO } from '../counterDTO';
 
 @Component({
   selector: 'app-counter-buttons',
@@ -6,18 +9,30 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./counter-buttons.component.css'],
 })
 export class CounterButtonsComponent {
-  @Output() increment = new EventEmitter<void>();
+  // USING   🦎NGRX HERE
+  constructor(private store: Store<counterDTO>) {}
 
-  @Output() decrement = new EventEmitter<void>();
-  @Output() reset = new EventEmitter<void>();
+  //before using ngrx 👇
+  // @Output() increment = new EventEmitter<void>();
+
+  // @Output() decrement = new EventEmitter<void>();
+  // @Output() reset = new EventEmitter<void>();
+  // 👆
 
   onIncrement() {
-    this.increment.emit();
+    this.store.dispatch(increment());
+    //before using ngrx 👇
+    // this.increment.emit();
   }
   onDecrement() {
-    this.decrement.emit();
+    this.store.dispatch(decrement());
+
+    //before using ngrx 👇
+    // this.decrement.emit();
   }
   onReset() {
-    this.reset.emit();
+    this.store.dispatch(reset());
+    //before using ngrx 👇
+    // this.reset.emit();
   }
 }
