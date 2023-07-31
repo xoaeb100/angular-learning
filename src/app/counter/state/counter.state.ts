@@ -1,3 +1,7 @@
-export const initialState = {
-  counter: 0,
+export interface counterDTO {
+  counter: number;
+}
+
+export const initialState: counterDTO = {
+  counter: 6,
 };
